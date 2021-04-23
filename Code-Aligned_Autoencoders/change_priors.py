@@ -1,3 +1,9 @@
+import inspect
+import logging
+logging.basicConfig(filename='/Users/pardhumadipalli/Documents/personal_Projects/Heterogeneous_CD/Code-Aligned_Autoencoders/heterogenous.log',
+                    filemode='a', format='[%(levelname)s] %(filename)s:%(lineno)s: %(message)s', level=logging.INFO)
+log = logging.getLogger(__name__)
+
 import numpy as np
 import tensorflow as tf
 from decorators import write_image_to_png
@@ -141,6 +147,7 @@ def alpha(x, y):
     """
     Ax = affinity(x)
     Ay = affinity(y)
+    log.info("Shape of affinity matrix: %s", Ax.shape)
     ps = int(Ax.shape[1] ** (0.5))
     alpha = tf.reshape(tf.reduce_mean(tf.abs(Ax - Ay), axis=-1), [-1, ps, ps])
     return alpha
@@ -160,10 +167,13 @@ def Degree_matrix(x, y):
         Output:
             D - float, array of [batch_size, patch_size^2, patch_size^2], Degree matrix
     """
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     ax = affinity(x)
     ay = affinity(y)
+    log.info("Shape of affinity matrix: %s", ax.shape)
     D = tf.norm(tf.expand_dims(ax, 1) - tf.expand_dims(ay, 2), 2, -1)
     D = (D - tf.reduce_min(D)) / (tf.reduce_max(D) - tf.reduce_min(D))
+    log.info("Degree matrix shape: %s", D.shape)
     return D
 
 
@@ -180,12 +190,13 @@ def ztz(x, y):
         Output:
             ztz - float, array of [batch_size, patch_size^2, patch_size^2], Inner product
     """
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     max_norm = x.shape[-1]
     flat_shape = [x.shape[0], x.shape[1] ** 2, -1]
     x = tf.reshape(x, flat_shape)
     y = tf.reshape(y, flat_shape)
     ztz = (tf.keras.backend.batch_dot(y, x, -1) + max_norm) / (2 * max_norm)
-
+    log.info("Shape of ztz: %s", ztz.shape)
     return ztz
 
 
@@ -204,7 +215,7 @@ def patched_alpha(x, y, ps, pstr, **kwargs):
         Output:
             Alpha - float, array of [image_height, image_width], Alpha prior
     """
-
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     bs = kwargs.get("affinity_batch_size", 500)
     assert x.shape[:2] == y.shape[:2]
     y_max, x_max = x.shape[:2]
@@ -214,8 +225,8 @@ def patched_alpha(x, y, ps, pstr, **kwargs):
     idx = patch_indecies(y_max, x_max, ps, pstr)
 
     runs = idx.shape[0] // bs
-    print("Runs: {}".format(runs))
-    print("Leftovers: {}".format(idx.shape[0] % bs))
+    log.info("Runs: %s", runs)
+    log.info("Leftovers: %s", (idx.shape[0] % bs))
     done_runs = 0
     if idx.shape[0] % bs != 0:
         runs += 1
@@ -247,6 +258,7 @@ def eval_prior(name, x, y, **kwargs):
         Output:
             Alpha - float, array of [image_height, image_width], Alpha prior
     """
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     sizes = kwargs.get("sizes", [-1, 0, 1])
     new_dims = np.array(x.shape[:-1])
     hw = re.sub(r"\W+", "", str(new_dims)) + "/"

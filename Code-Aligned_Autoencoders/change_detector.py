@@ -1,3 +1,7 @@
+import logging
+logging.basicConfig(filename='/Users/pardhumadipalli/Documents/personal_Projects/Heterogeneous_CD/Code-Aligned_Autoencoders/heterogenous.log', filemode='a', format='[%(levelname)s] %(filename)s:%(lineno)s: %(message)s', level=logging.INFO)
+log = logging.getLogger(__name__)
+
 import os.path
 import tensorflow as tf
 
@@ -12,8 +16,15 @@ from config import get_config
 import datasets
 import numpy as np
 from sklearn.metrics import roc_curve, auc
-from matplotlib import pyplot as plt
-from pdb import set_trace as bp
+import matplotlib
+matplotlib.use('agg')
+import matplotlib.pyplot as plt
+# from pdb import set_trace as bp
+
+
+def printtofile(*kwargs):
+    tf.print("[INFO]", os.path.basename(__file__), ":", *kwargs,
+             output_stream="file:///Users/pardhumadipalli/Documents/personal_Projects/Heterogeneous_CD/Code-Aligned_Autoencoders/heterogenous.log")
 
 
 class ChangeDetector:
@@ -250,7 +261,7 @@ class ChangeDetector:
         change_map = self._change_map(difference_img)
         self._compute_metrics(target_change_map, change_map, self.change_map_metrics)
 
-        tf.print("cohens kappa:", self.metrics_history["cohens kappa"][-1])
+        printtofile("cohens kappa:", self.metrics_history["cohens kappa"][-1])
         confusion_map = self._confusion_map(target_change_map, change_map)
 
         return confusion_map

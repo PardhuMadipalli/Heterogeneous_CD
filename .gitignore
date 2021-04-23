@@ -1,7 +1,11 @@
 *.txt
 *.npz
 *.npy
+.idea
 **/__pycache__
 **/msvr-2-1/**
 **/ParforProgress2/**
+Code-Aligned_Autoencoders/env
+Code-Aligned_Autoencoders/logs/
 Dumpster.*
+**/UiT_HCD_California_2017.mat

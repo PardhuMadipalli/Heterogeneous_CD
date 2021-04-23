@@ -1,7 +1,12 @@
+import inspect
 import os
 
 # Set loglevel to suppress tensorflow GPU messages
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+import logging
+logging.basicConfig(filename='/Users/pardhumadipalli/Documents/personal_Projects/Heterogeneous_CD/Code-Aligned_Autoencoders/heterogenous.log',
+                    filemode='a', format='[%(levelname)s] %(filename)s:%(lineno)s: %(message)s', level=logging.INFO)
+log = logging.getLogger(__name__)
 
 import re
 from itertools import count
@@ -10,6 +15,9 @@ import numpy as np
 import tensorflow as tf
 from scipy.io import loadmat, savemat
 from change_priors import eval_prior, remove_borders, image_in_patches
+import logging
+logging.basicConfig(format='[%(levelname)s] %(filename)s:%(lineno)s: %(message)s', level=logging.INFO)
+log = logging.getLogger(__name__)
 
 
 def load_prior(name, expected_hw=None):
@@ -123,6 +131,7 @@ def _france(reduce=True):
 
 def _california(reduce=False):
     """ Load California dataset from .mat """
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     mat = loadmat("data/California/UiT_HCD_California_2017.mat")
 
     t1 = tf.convert_to_tensor(mat["t1_L8_clipped"], dtype=tf.float32)
@@ -132,7 +141,7 @@ def _california(reduce=False):
     if change_mask.ndim == 2:
         change_mask = change_mask[..., np.newaxis]
     if reduce:
-        print("Reducing")
+        log.info("Reducing")
         reduction_ratios = (4, 4)
         new_dims = list(map(lambda a, b: a // b, change_mask.shape, reduction_ratios))
         t1 = tf.cast(tf.image.resize(t1, new_dims, antialias=True), dtype=tf.float32)
@@ -235,20 +244,20 @@ def _training_data_generator(x, y, p, patch_size):
 
 
 DATASETS = {
-    "Texas": _texas,
+    # "Texas": _texas,
     "California": _california,
-    "France": _france,
-    "Italy": _italy,
-    "UK": _uk,
-    "Denmark": _denmark,
+    # "France": _france,
+    # "Italy": _italy,
+    # "UK": _uk,
+    # "Denmark": _denmark,
 }
 prepare_data = {
-    "Texas": True,
+    # "Texas": True,
     "California": True,
-    "France": True,
-    "Italy": False,
-    "UK": True,
-    "Denmark": False,
+    # "France": True,
+    # "Italy": False,
+    # "UK": True,
+    # "Denmark": False,
 }
 
 
@@ -266,11 +275,11 @@ def fetch_fixed_dataset(name, patch_size=100, **kwargs):
             channels - tuple (c_x, c_y), number of channels for domains x and y
     """
     x_im, y_im, target_cm = DATASETS[name](prepare_data[name])
-
+    log.info("Not sure why this method is being used: fetch_fixed_dataset")
     try:
         initial_cm = load_prior(name, x_im.shape[:2])
     except (FileNotFoundError, KeyError) as e:
-        print("Evaluating and saving prior")
+        log.info("Evaluating and saving prior")
         initial_cm = evaluate_prior(name, x_im, y_im, **kwargs)
     cross_loss_weight = 1 - initial_cm
     cross_loss_weight -= tf.reduce_min(cross_loss_weight)
@@ -288,7 +297,7 @@ def fetch_fixed_dataset(name, patch_size=100, **kwargs):
     evaluation_data = tf.data.Dataset.from_tensor_slices(tuple(dataset))
 
     c_x, c_y = shapes[0][-1], shapes[1][-1]
-
+    log.info("Calculated training_data and evaluation_data.")
     return training_data, evaluation_data, (c_x, c_y)
 
 
@@ -354,6 +363,7 @@ def fetch(name, patch_size=100, **kwargs):
 
 
 if __name__ == "__main__":
+    log.info("Running datasets.py")
     for DATASET in DATASETS:
-        print(f"Loading {DATASET}")
+        log.info("Loading %s", DATASET)
         fetch_fixed_dataset(DATASET)

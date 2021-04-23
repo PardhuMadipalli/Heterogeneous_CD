@@ -1,3 +1,9 @@
+import inspect
+import logging
+logging.basicConfig(filename='/Users/pardhumadipalli/Documents/personal_Projects/Heterogeneous_CD/Code-Aligned_Autoencoders/heterogenous.log',
+                    filemode='a', format='[%(levelname)s] %(filename)s:%(lineno)s: %(message)s', level=logging.INFO)
+log = logging.getLogger(__name__)
+
 import os
 import gc
 
@@ -12,6 +18,10 @@ from change_priors import Degree_matrix, ztz, image_in_patches
 from config import get_config_kACE
 from decorators import image_to_tensorboard
 import numpy as np
+
+
+def printtofile(*kwargs):
+    tf.print("[INFO]", os.path.basename(__file__), ":", *kwargs, output_stream="file:///tmp/heterogenous.log")
 
 
 class Kern_AceNet(ChangeDetector):
@@ -77,12 +87,14 @@ class Kern_AceNet(ChangeDetector):
         self.metrics_history["total"] = []
 
     def save_all_weights(self):
+        log.info("In function: %s", inspect.currentframe().f_code.co_name)
         self._enc_x.save_weights(self.log_path + "/weights/_enc_x/")
         self._enc_y.save_weights(self.log_path + "/weights/_enc_y/")
         self._dec_x.save_weights(self.log_path + "/weights/_dec_x/")
         self._dec_y.save_weights(self.log_path + "/weights/_dec_y/")
 
     def load_all_weights(self, folder):
+        log.info("In function: %s", inspect.currentframe().f_code.co_name)
         self._enc_x.load_weights(folder + "/weights/_enc_x/")
         self._enc_y.load_weights(folder + "/weights/_enc_y/")
         self._dec_x.load_weights(folder + "/weights/_dec_x/")
@@ -106,6 +118,7 @@ class Kern_AceNet(ChangeDetector):
         return self._dec_y(inputs, training)
 
     def early_stopping_criterion(self):
+        log.info("In function: %s", inspect.currentframe().f_code.co_name)
         temp = tf.math.reduce_min([self.stopping, self.patience]) + 1
         self.stopping.assign_add(1)
         last_losses = np.array(self.metrics_history["total"][-(temp):])
@@ -120,25 +133,28 @@ class Kern_AceNet(ChangeDetector):
             else:
                 idx_min = idx_2nd_min
         stop = idx_min == 0 and self.stopping > self.patience
-        tf.print(
-            "total_loss",
-            last_losses[-1],
-            "Target",
-            last_losses[idx_min],
-            "Left",
-            self.patience - (temp - 1) + idx_min,
+        log.info(
+            "total_loss: %s",
+            last_losses[-1])
+        log.info("Target %s",
+            last_losses[idx_min]),
+        log.info("Left %s",
+            self.patience - (temp - 1) + idx_min
         )
         return stop
 
     @tf.function
     def __call__(self, inputs, training=False):
+        log.info("In function: %s", inspect.currentframe().f_code.co_name)
         x, y = inputs
         tf.debugging.Assert(tf.rank(x) == 4, [x.shape])
         tf.debugging.Assert(tf.rank(y) == 4, [y.shape])
 
         if training:
             x_code, y_code = self._enc_x(x, training), self._enc_y(y, training)
+            log.info("Shape of x_code and y_code: %s", x_code.shape)
             x_hat, y_hat = self._dec_x(y_code, training), self._dec_y(x_code, training)
+            log.info("Shape of x_hat and y_hat: %s", x_hat.shape)
             x_dot, y_dot = (
                 self._dec_x(self._enc_y(y_hat, training), training),
                 self._dec_y(self._enc_x(x_hat, training), training),
@@ -155,6 +171,7 @@ class Kern_AceNet(ChangeDetector):
 
         else:
             x_code, y_code = self.enc_x(x, name="x_code"), self.enc_y(y, name="y_code")
+            log.info("Shape of x_code and y_code: %s", x_code.shape)
             x_tilde, y_tilde = (
                 self.dec_x(x_code, name="x_tilde"),
                 self.dec_y(y_code, name="y_tilde"),
@@ -176,6 +193,7 @@ class Kern_AceNet(ChangeDetector):
         y - tensor of shape (bs, ps_h, ps_w, c_y)
         clw - cross_loss_weight, tensor of shape (bs, ps_h, ps_w, 1)
         """
+        log.info("In function: %s", inspect.currentframe().f_code.co_name)
         with tf.GradientTape() as tape:
             x_hat, y_hat, x_dot, y_dot, x_tilde, y_tilde, ztz = self(
                 [x, y], training=True
@@ -185,6 +203,7 @@ class Kern_AceNet(ChangeDetector):
                 tf.image.central_crop(x, 0.2), tf.image.central_crop(y, 0.2)
             )
             kernels_loss = self.kernels_lambda * self.loss_object(Kern, ztz)
+            log.info("kernels_loss: %s", kernels_loss)
             l2_loss_k = sum(self._enc_x.losses) + sum(self._enc_y.losses)
             targets_k = (
                 self._enc_x.trainable_variables + self._enc_y.trainable_variables
@@ -257,13 +276,14 @@ def test(DATASET="Texas", CONFIG=None):
     6. Evaluate the change detection scheme
         a. change_map = threshold [(x - f_y(y))/2 + (y - f_x(x))/2]
     """
+    log.info("In function: %s", inspect.currentframe().f_code.co_name)
     if CONFIG is None:
         CONFIG = get_config_kACE(DATASET)
-    print(f"Loading {DATASET} data")
+    log.info(f"Loading {DATASET} data")
     x_im, y_im, EVALUATE, (C_X, C_Y) = datasets.fetch(DATASET, **CONFIG)
     if tf.config.list_physical_devices("GPU") and not CONFIG["debug"]:
         C_CODE = 3
-        print("here")
+        log.info("here")
         TRANSLATION_SPEC = {
             "enc_X": {"input_chs": C_X, "filter_spec": [50, 50, C_CODE]},
             "enc_Y": {"input_chs": C_Y, "filter_spec": [50, 50, C_CODE]},
@@ -271,7 +291,7 @@ def test(DATASET="Texas", CONFIG=None):
             "dec_Y": {"input_chs": C_CODE, "filter_spec": [50, 50, C_Y]},
         }
     else:
-        print("why here?")
+        log.info("why here?")
         C_CODE = 1
         TRANSLATION_SPEC = {
             "enc_X": {"input_chs": C_X, "filter_spec": [C_CODE]},
@@ -279,9 +299,9 @@ def test(DATASET="Texas", CONFIG=None):
             "dec_X": {"input_chs": C_CODE, "filter_spec": [C_X]},
             "dec_Y": {"input_chs": C_CODE, "filter_spec": [C_Y]},
         }
-    print("Change Detector Init")
+    log.info("Change Detector Init")
     cd = Kern_AceNet(TRANSLATION_SPEC, **CONFIG)
-    print("Training")
+    log.info("Training")
     training_time = 0
     cross_loss_weight = tf.expand_dims(tf.zeros(x_im.shape[:-1], dtype=tf.float32), -1)
     for epochs in CONFIG["list_epochs"]:
@@ -303,6 +323,8 @@ def test(DATASET="Texas", CONFIG=None):
     final_acc = cd.metrics_history["ACC"][-1]
     performance = (final_kappa, final_acc)
     timestamp = cd.timestamp
+    log.info("final_kappa: %s", final_kappa)
+    log.info("final_acc: %s", final_acc)
     epoch = cd.epoch.numpy()
     speed = (epoch, training_time, timestamp)
     del cd
@@ -311,8 +333,5 @@ def test(DATASET="Texas", CONFIG=None):
 
 
 if __name__ == "__main__":
-    test("Texas")
     test("California")
-    test("Italy")
-    test("France")
-    test("UK")
+
