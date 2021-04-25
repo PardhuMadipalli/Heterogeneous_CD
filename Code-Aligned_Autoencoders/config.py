@@ -34,7 +34,7 @@ def get_config(dataset_name, debug=False):
     else:
         CONFIG.update(
             {
-                "list_epochs": [2, 2, 1],  # number of training epochs
+                "list_epochs": [50, 50, 50, 50],  # number of training epochs
                 "batches": 2,  # number of batches per epoch
                 "batch_size": 2,  # number of samples per batch
                 "patch_size": 10,  # square size of patches extracted for training

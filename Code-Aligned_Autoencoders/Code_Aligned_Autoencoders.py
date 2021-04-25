@@ -283,7 +283,6 @@ def test(DATASET="Texas", CONFIG=None):
     x_im, y_im, EVALUATE, (C_X, C_Y) = datasets.fetch(DATASET, **CONFIG)
     if tf.config.list_physical_devices("GPU") and not CONFIG["debug"]:
         C_CODE = 3
-        log.info("here")
         TRANSLATION_SPEC = {
             "enc_X": {"input_chs": C_X, "filter_spec": [50, 50, C_CODE]},
             "enc_Y": {"input_chs": C_Y, "filter_spec": [50, 50, C_CODE]},
@@ -291,7 +290,6 @@ def test(DATASET="Texas", CONFIG=None):
             "dec_Y": {"input_chs": C_CODE, "filter_spec": [50, 50, C_Y]},
         }
     else:
-        log.info("why here?")
         C_CODE = 1
         TRANSLATION_SPEC = {
             "enc_X": {"input_chs": C_X, "filter_spec": [C_CODE]},
@@ -304,6 +302,7 @@ def test(DATASET="Texas", CONFIG=None):
     log.info("Training")
     training_time = 0
     cross_loss_weight = tf.expand_dims(tf.zeros(x_im.shape[:-1], dtype=tf.float32), -1)
+    log.info("Number of epochs: %s", CONFIG["list_epochs"])
     for epochs in CONFIG["list_epochs"]:
         CONFIG.update(epochs=epochs)
         tr_gen, dtypes, shapes = datasets._training_data_generator(

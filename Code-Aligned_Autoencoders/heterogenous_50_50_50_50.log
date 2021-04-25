@@ -1,0 +1,326 @@
+[INFO] Code_Aligned_Autoencoders.py:279: In function: test
+[INFO] Code_Aligned_Autoencoders.py:282: Loading California data
+[INFO] datasets.py:134: In function: _california
+[INFO] datasets.py:144: Reducing
+[INFO] Code_Aligned_Autoencoders.py:300: Change Detector Init
+[INFO] Code_Aligned_Autoencoders.py:302: Training
+[INFO] Code_Aligned_Autoencoders.py:305: Number of epochs: [50, 50, 50, 50]
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (2, 10, 10, 1)
+[INFO] api.py:466: Shape of x_hat and y_hat: (2, 10, 10, 11)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of ztz: (2, 4, 4)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (2, 10, 10, 1)
+[INFO] api.py:466: Shape of x_hat and y_hat: (2, 10, 10, 11)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of ztz: (2, 4, 4)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of affinity matrix: (2, 4, 4)
+[INFO] api.py:466: Degree matrix shape: (2, 4, 4)
+[INFO] api.py:466: kernels_loss: Tensor("mul:0", shape=(), dtype=float32)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of affinity matrix: (2, 4, 4)
+[INFO] api.py:466: Degree matrix shape: (2, 4, 4)
+[INFO] api.py:466: kernels_loss: Tensor("mul:0", shape=(), dtype=float32)
+[INFO] api.py:466: In function: _call_unconverted
+[WARNING] deprecation.py:531: From /Users/pardhumadipalli/Library/Python/3.8/lib/python/site-packages/tensorflow/python/util/deprecation.py:605: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+[INFO] api.py:466: Shape of x_code and y_code: (1, 89, 50, 1)
+[INFO] change_detector.py : cohens kappa: 0.29380614
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.26281
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.29018074
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.4589479
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.29018074
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3875661
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(8, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.28333783
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3603541
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(7, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.27345687
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.5164493
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(6, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.27062398
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3906494
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(5, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.27120537
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.515075
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.26281
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(4, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.2685675
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.2574057
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3277556
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.25550032
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.2693423
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(8, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.24669069
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.432934
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(7, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.24101251
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3880768
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(6, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.24183774
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3799148
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(5, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.23744076
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3519603
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(4, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.23443502
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3674347
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(3, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.23310906
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.3415625
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(2, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.22762918
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.4010353
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(1, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.2233963
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.4367768
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.1833603
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(0, shape=(), dtype=int32)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (1, 89, 50, 1)
+[INFO] change_detector.py : cohens kappa: 0.2233963
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6931
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.2233963
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9904287
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.22026485
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9490631
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(8, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.21411961
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9328398
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(7, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.20836985
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.8112525
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(6, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.20378411
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.8254733
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(5, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.20006734
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.994791
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(4, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.19826561
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6943974
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(3, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.19587564
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9668843
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(2, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.19348043
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.911764
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(1, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.18958133
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7193558
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.6931
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(0, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.18507111
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9340858
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.9340858
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.17929167
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 2.11908
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.9340858
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.17197311
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7557125
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.7557125
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.17197311
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.17109662
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7236949
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16806865
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.8032131
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(8, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16748935
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.8832152
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(7, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1669113
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7630283
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(6, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16806865
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.4998302
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(5, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1636613
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7898351
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(4, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1682027
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6244484
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(3, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16385806
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7369735
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(2, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16260421
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6544887
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(1, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16348577
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.771533
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.4739128
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(0, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.16289765
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.5694985
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5694985
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15962058
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9791726
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5694985
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1602081
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1602081
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.640899
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1605025
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7375746
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(8, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.1602081
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6667222
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(7, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15932727
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6578963
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(6, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15932727
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.9692006
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(5, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15903425
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7485622
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(4, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15582126
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.611817
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(3, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15367979
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6854116
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(2, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15252161
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7686992
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(1, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.15032804
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.7727757
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.5140841
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(0, shape=(), dtype=int32)
+[INFO] Code_Aligned_Autoencoders.py:97: In function: load_all_weights
+[INFO] change_detector.py : cohens kappa: 0.11641836
+[INFO] Code_Aligned_Autoencoders.py:325: final_kappa: 0.11641836
+[INFO] Code_Aligned_Autoencoders.py:326: final_acc: 0.7905618

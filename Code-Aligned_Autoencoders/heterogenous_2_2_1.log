@@ -1,0 +1,66 @@
+[INFO] Code_Aligned_Autoencoders.py:279: In function: test
+[INFO] Code_Aligned_Autoencoders.py:282: Loading California data
+[INFO] datasets.py:134: In function: _california
+[INFO] datasets.py:144: Reducing
+[INFO] Code_Aligned_Autoencoders.py:300: Change Detector Init
+[INFO] Code_Aligned_Autoencoders.py:302: Training
+[INFO] Code_Aligned_Autoencoders.py:305: Number of epochs: [2, 2, 1]
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (2, 10, 10, 1)
+[INFO] api.py:466: Shape of x_hat and y_hat: (2, 10, 10, 11)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of ztz: (2, 4, 4)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (2, 10, 10, 1)
+[INFO] api.py:466: Shape of x_hat and y_hat: (2, 10, 10, 11)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of ztz: (2, 4, 4)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of affinity matrix: (2, 4, 4)
+[INFO] api.py:466: Degree matrix shape: (2, 4, 4)
+[INFO] api.py:466: kernels_loss: Tensor("mul:0", shape=(), dtype=float32)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of affinity matrix: (2, 4, 4)
+[INFO] api.py:466: Degree matrix shape: (2, 4, 4)
+[INFO] api.py:466: kernels_loss: Tensor("mul:0", shape=(), dtype=float32)
+[INFO] api.py:466: In function: _call_unconverted
+[WARNING] deprecation.py:531: From /Users/pardhumadipalli/Library/Python/3.8/lib/python/site-packages/tensorflow/python/util/deprecation.py:605: calling map_fn_v2 (from tensorflow.python.ops.map_fn) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Use fn_output_signature instead
+[INFO] api.py:466: Shape of x_code and y_code: (1, 89, 50, 1)
+[INFO] change_detector.py : cohens kappa: 0.57317054
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.502971
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.502971
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.57317054
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 1.6533792
+[INFO] Code_Aligned_Autoencoders.py:139: Target 1.502971
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] api.py:466: In function: _call_unconverted
+[INFO] api.py:466: Shape of x_code and y_code: (1, 89, 50, 1)
+[INFO] change_detector.py : cohens kappa: 0.56973755
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 2.1588168
+[INFO] Code_Aligned_Autoencoders.py:139: Target 2.1588168
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.56973755
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 2.4608612
+[INFO] Code_Aligned_Autoencoders.py:139: Target 2.1588168
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(9, shape=(), dtype=int32)
+[INFO] change_detector.py : cohens kappa: 0.56914604
+[INFO] Code_Aligned_Autoencoders.py:121: In function: early_stopping_criterion
+[INFO] Code_Aligned_Autoencoders.py:90: In function: save_all_weights
+[INFO] Code_Aligned_Autoencoders.py:136: total_loss: 2.3706293
+[INFO] Code_Aligned_Autoencoders.py:139: Target 2.3706293
+[INFO] Code_Aligned_Autoencoders.py:141: Left tf.Tensor(10, shape=(), dtype=int32)
+[INFO] Code_Aligned_Autoencoders.py:97: In function: load_all_weights
+[INFO] change_detector.py : cohens kappa: 0.5525467
+[INFO] Code_Aligned_Autoencoders.py:325: final_kappa: 0.5525467
+[INFO] Code_Aligned_Autoencoders.py:326: final_acc: 0.8952809
